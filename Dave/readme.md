@@ -1,4 +1,4 @@
-# H1 Dave's First Markdown File
+# Dave's First Markdown File
 
 Some helpful Git commands:
 1. git init  - initialize an existing directory as a Git repository
