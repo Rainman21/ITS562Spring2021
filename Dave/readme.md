@@ -1,4 +1,4 @@
-# H1 Dave's First Markdown File
+# Dave's First Markdown File
 
 Some helpful Git commands:
 1. git init  - initialize an existing directory as a Git repository
@@ -12,4 +12,4 @@ Some helpful Git commands:
 9. git commit -m “[descriptive message]” - commit your staged content as a new commit snapshot
 
 Here is where the class repository is located:
-	[title](https://github.com/Rainman21/ITS562Spring2021)
+	[ITS562Spring2021](https://github.com/Rainman21/ITS562Spring2021)
