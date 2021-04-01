@@ -1,28 +1,98 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <style type="text/css">
+    <title>Kursad's Calculator</title>
+    <style>
+        .calculator {
+            display: inline-block;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
 
-        html
-        {height: 500px;
-        width:500px;
-        margin:0;
-        padding:0;
-            }
-            body
-            {height: 500px;
-        width:500px; margin:0;
-        overflow: hidden;
-        padding:0;  
-                }
-                .container
-                {height: 500px;
-        width:500px; margin:0;
-        overflow: hidden;
-        padding:0;}
-        
-        </style>
+            border-collapse: collapse;
+            width: 250px;
+            height: 375px;
+            border: 0.1cm solid #0724a7;
+        }
+
+        .screen {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            text-align: end;
+            font-size:auto;
+            top: 1%;
+            left: 1%;
+            height: 39%;
+            width: 99%;
+        }
+
+        .buttons {
+            display: inline-block;
+            position: relative;
+            bottom: 2%;
+            left: 1%;
+            height: 59%;
+            width: 99%;
+        }
+
+        .buttons button {
+            display: inline-block;
+            position: relative;
+            margin: 0.5%;
+            width: 22.5%;
+            height: 20%;
+        }
+    </style>
+<script>
+    var screen = "";
+    document.getElementById("screen").innerHTML = screen;
+    function add(symbol){
+        screen += symbol;
+        document.getElementById("screen").innerHTML = screen;
+    }
+    function remove(){
+        screen = screen.slice(0, -1);
+        document.getElementById("screen").innerHTML = screen;
+    }
+    function removeAll(){
+        screen = "";
+        document.getElementById("screen").innerHTML = screen;
+    }
+    function calculate(){
+        screen = eval(screen) + "";
+        document.getElementById("screen").innerHTML = screen;
+    }
+</script>
 </head>
 <body>
-
+    <span class="calculator">
+        <span class="screen" id="screen">
+            Numbers will be shown here!!
+        </span>
+        <span class="buttons">
+            <button type="button" id="CE" onclick="removeAll();">CE</button>
+            <button type="button" id="C" onclick="remove();">C</button>
+            <button type="button" id="(" onclick="add('(')">(</button>
+            <button type="button" id=")" onclick="add(')');">)</button><br>
+            <button type="button" id="7" onclick="add(7);">7</button>
+            <button type="button" id="8" onclick="add(8);">8</button>
+            <button type="button" id="9" onclick="add(9);">9</button>
+            <button type="button" id="+" onclick="add('+');">+</button><br>
+            <button type="button" id="4" onclick="add(4);">4</button>
+            <button type="button" id="5" onclick="add(5);">5</button>
+            <button type="button" id="6" onclick="add(6);">6</button>
+            <button type="button" id="-" onclick="add('-');">-</button><br>
+            <button type="button" id="1" onclick="add(1);">1</button>
+            <button type="button" id="2" onclick="add(2);">2</button>
+            <button type="button" id="3" onclick="add(3);">3</button>
+            <button type="button" id="X" onclick="add('*');">X</button><br>
+            <button type="button" id="." onclick="add('.');">.</button>
+            <button type="button" id="0" onclick="add(0);">0</button>
+            <button type="button" id="=" onclick="calculate();">=</button>
+            <button type="button" id="/" onclick="add('/');">÷</button><br>
+        </span>
+    </span>
 </body>
 </html>
