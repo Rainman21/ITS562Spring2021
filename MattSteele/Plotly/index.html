@@ -1,0 +1,31 @@
+		
+    <html>
+        <head>
+    <!-- Plotly.js -->
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            
+            </head>
+            <body>
+            <h1>Matt's First Attempt With Plotly</h1>
+            <!-- Plotly chart will be drawn inside this DIV -->
+            <p>This is my first stab at Plotly. I am refering to <a href="https://github.com/Rainman21/PlotlyDemo">Ricks Demo.</a>
+            This is my process so far. I looked up some data sets. I came across an "auto mpg set" that I found interesting. 
+            <a href="https://raw.githubusercontent.com/plotly/datasets/master/auto-mpg.csv">See here</a></p>
+
+            <p>What I have done so far is understand how the Plotly.d3.csv pulls the data in and maps. Rick's demo leverages an array and 
+                then plots everything. Mine is an array of objects. This took me quite some time to debug.</p>
+
+            <p>So what I have done is only grabbed the first 5 objects. Once I understand this a little more I am going to try to plot the data relative to the fields  </p>
+                <h4>Example Object</h4>
+            <p> acceleration: "12"<br/>
+                cylinders: "8"<br/>
+                displacement: "307"<br/>
+                horsepower: "130"<br/>
+                model-year: "70"<br/>
+                mpg: "18"<br/>
+                weight: "3504"</p>
+            <div id="mpg" style="width:100%;height:100%"></div>
+            <script src="scripts/mpg.js"></script>
+            </body>
+    </html>
+            
