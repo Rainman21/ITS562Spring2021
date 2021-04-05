@@ -147,7 +147,7 @@ calculator.toString = function () {
 // }
 calculator.doStatistics([1, 1, 1, 1, 2, 3.3, 3.5])
 console.log(calculator.toString())
-// new stats from assignment
 
+// new stats from assignment
 calculator.doStatistics([6, 3, 9, 6, 6, 5, 9, 3])
 console.log(calculator.toString())
