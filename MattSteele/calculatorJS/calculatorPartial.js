@@ -56,23 +56,48 @@ const getHistogram = function (arrayOfNumbers) {
   return returnMap;
 }
 
-const getMin = function (arrayOfNumbers){
-  let returnMin = new Math()
-  
-   returnMin.Math.min(arrayOfNumbers) 
+const getMin = function(arrayOfNumbers){
+  let returnMin = Math.min.apply(null,arrayOfNumbers)
+  return returnMin
 }
 
 
-const getMax = function (arrayOfNumbers){
-  let returnMax = new Math()
-  
-  returnMax.Math.max(arrayOfNumbers) 
+const getMax = function(arrayOfNumbers){
+  let returnMax = Math.max.apply(null, arrayOfNumbers)
+  return returnMax
+}
+
+const getMode = function(arrayOfNumbers) {
+    var counter =  {};
+    var freq =0
+    var mode
+    // for each element in the array
+     arrayOfNumbers.forEach(element => {
+       // check is the element exists in counter Object
+      if(counter[element]=== undefined){
+        // add element to object setting it equal to 0
+        counter[element] = 0;
+      }
+      // if element exists in object add 1 to its value
+      counter[element] += 1;
+    })
+    // for each property in the counter object 
+     for (var temp in counter) {
+       // check if that property's value is greater than the frequancy of prior properties
+      if(counter[temp] > freq){
+        // if so set the freq to the new freq as well as the mode
+        freq = counter[temp]
+        mode = temp
+      }
+    }
+     return mode
 }
 
 var calculator = {}
 calculator.data = []
 calculator.average = 0.0
 calculator.min = 0.0
+calculator.mode = 0
 calculator.max = 0.0
 calculator.count = 0
 calculator.date = null
@@ -94,6 +119,9 @@ calculator.doStatistics = function (arrayOfNumbers) {
   this.average = getAverage(arrayOfNumbers)
   this.standardDeviation = getStandardDeviation(arrayOfNumbers, this.average)
   this.histogram = getHistogram(arrayOfNumbers)
+  this.min = getMin(arrayOfNumbers)
+  this.mode = getMode(arrayOfNumbers) 
+  this.max = getMax(arrayOfNumbers)
   return this
   //calculator.doStatistics([2]).
 }
@@ -102,7 +130,7 @@ calculator.toString = function () {
   let outputString = `=====Array Statistics========  
   Date of calc = ${this.date.toLocaleString()}
   Array had ${this.count} members
-  min= ${this.min} avg = ${this.average} stdDev=${this.standardDeviation}`
+  min= ${this.min} avg = ${this.average} mode = ${this.mode} stdDev=${this.standardDeviation} max=${this.max}`
 
   for (const [key, value] of this.histogram.entries()) {
     outputString += `\n\t ${key} occurs ${value} times`
@@ -118,5 +146,8 @@ calculator.toString = function () {
 //   console.log(err)
 // }
 calculator.doStatistics([1, 1, 1, 1, 2, 3.3, 3.5])
+console.log(calculator.toString())
+// new stats from assignment
 
+calculator.doStatistics([6, 3, 9, 6, 6, 5, 9, 3])
 console.log(calculator.toString())
