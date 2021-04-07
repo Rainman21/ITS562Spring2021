@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Kursad's Calculator</title>
     <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
     <style>
+        body {
+            background-image: url(https://cdn.pixabay.com/photo/2014/09/24/16/28/bricks-459299_1280.jpg);
+        }
         .calculator {
             background-image: linear-gradient(90deg, #172339, #2D4F72);
             display: inline-block;
@@ -21,17 +25,23 @@
         .screen {
             display: inline-block;
             position: relative;
-            overflow: hidden;
             text-align: end;
             color: white;
             font-size: xx-large;
-            top: 5%;
-            right: 3%;
-            height: 39%;
+            padding-top: 8%;
+            padding-right: 3%;
+            height: 35%;
             width: 99%;
         }
 
+        #screen {
+            word-wrap: break-word;
+            overflow: auto;
+            bottom: 1%;
+        }
+
         .buttons {
+            top: auto;
             display: inline-block;
             position: relative;
             bottom: 5%;
@@ -40,8 +50,6 @@
         }
 
         .buttons button {
-            display: inline-block;
-            position: relative;
             background: rgba(76, 175, 80, 0);
             color: white;
             border: none;
@@ -69,29 +77,29 @@
             background-image: linear-gradient(180deg, #FBC173, #F36468);
 
         }
-
     </style>
-<script>
-    var screen = "";
-    document.getElementById("screen").innerHTML = screen;
-    function add(symbol){
-        screen += symbol;
+    <script>
+        var screen = "";
         document.getElementById("screen").innerHTML = screen;
-    }
-    function remove(){
-        screen = screen.slice(0, -1);
-        document.getElementById("screen").innerHTML = screen;
-    }
-    function removeAll(){
-        screen = "";
-        document.getElementById("screen").innerHTML = screen;
-    }
-    function calculate(){
-        screen = eval(screen) + "";
-        document.getElementById("screen").innerHTML = screen;
-    }
-</script>
+        function add(symbol) {
+            screen += symbol;
+            document.getElementById("screen").innerHTML = screen;
+        }
+        function remove() {
+            screen = screen.slice(0, -1);
+            document.getElementById("screen").innerHTML = screen;
+        }
+        function removeAll() {
+            screen = "";
+            document.getElementById("screen").innerHTML = screen;
+        }
+        function calculate() {
+            screen = eval(screen) + "";
+            document.getElementById("screen").innerHTML = screen;
+        }
+    </script>
 </head>
+
 <body>
     <span class="calculator">
         <span class="screen" id="screen">
@@ -121,4 +129,5 @@
         </span>
     </span>
 </body>
+
 </html>
