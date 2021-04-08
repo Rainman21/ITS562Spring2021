@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ozen's Flat Calculator</title>
+    <style>
+        .fixingButtons button {
+            height: 60px;
+            width: 60px;
+        }
+
+        .fixingButtons button:hover {
+            background-color: blueviolet;
+        }
+    </style>
+    <script>
+        var ressult= " ";
+        function update(number){
+            ressult = ressult + number;
+            document.getElementById("text").innerHTML = ressult
+                    }
+        function deleteE(){
+            ressult  = ressult.slice(0, -1);
+            
+            document.getElementById("text").innerHTML = ressult;
+        }
+
+        function clearR(){
+            ressult  ="";
+            
+            document.getElementById("text").innerHTML = ressult;
+        }
+
+        function math(){
+            ressult = eval(ressult).toString();
+            
+            document.getElementById("text").innerHTML = ressult;
+        }
+    </script>
+</head>
+
+<body>
+    <div style="border-style: double; width: 260px;; height: 398px; position: fixed;">
+        <p style="width: 150px; height: 60px;" id="text">Result</p>
+        <div class="fixingButtons" style="padding: 2px;">
+            <button type="button" style="width: 250px;" onclick="clearR()">Clear</button> <br>
+            <button type="button" onclick="update(7)">7</button>
+            <button type="button" onclick="update(8)">8</button>
+            <button type="button" onclick="update(9)">9</button>
+            <button type="button" onclick="deleteE()">C</button> <br>
+            <button type="button" onclick="update(4)">4</button>
+            <button type="button" onclick="update(5)">5</button>
+            <button type="button" onclick="update(6)">6</button>
+            <button type="button" onclick="update('+')">+</button><br>
+            <button type="button" onclick="update(1)">1</button>
+            <button type="button" onclick="update(2)">2</button>
+            <button type="button" onclick="update(3)">3</button>
+            <button type="button" onclick="update('-')">-</button><br>
+            <button type="button" onclick="update(0)">0</button>
+            <button type="button" style="width: 122px; " onclick="math()">=</button>
+        </div>
+    </div>
+</body>
+</html>
