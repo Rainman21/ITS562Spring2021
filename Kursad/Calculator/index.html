@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kursad's Calculator</title>
+    <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+    <style>
+        body {
+            background-image: url(https://cdn.pixabay.com/photo/2014/09/24/16/28/bricks-459299_1280.jpg);
+        }
+        .calculator {
+            background-image: linear-gradient(90deg, #172339, #2D4F72);
+            display: inline-block;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            font-family: 'Aldrich';
+            border-radius: 25px;
+            width: 250px;
+            height: 450px;
+        }
+
+        .screen {
+            display: inline-block;
+            position: relative;
+            text-align: end;
+            color: white;
+            font-size: xx-large;
+            padding-top: 8%;
+            padding-right: 3%;
+            height: 35%;
+            width: 99%;
+        }
+
+        #screen {
+            word-wrap: break-word;
+            overflow: auto;
+            bottom: 1%;
+        }
+
+        .buttons {
+            top: auto;
+            display: inline-block;
+            position: relative;
+            bottom: 5%;
+            height: 59%;
+            width: 99%;
+        }
+
+        .buttons button {
+            background: rgba(76, 175, 80, 0);
+            color: white;
+            border: none;
+            font-family: 'Aldrich';
+            font-size: large;
+            margin: 0.5%;
+            width: 22.5%;
+            height: 20%;
+        }
+
+        .buttons button:hover {
+            border: 0.1cm solid #F36468;
+            border-radius: 12px;
+            /*background-color: #F36468;*/
+        }
+
+        #operator {
+            background-image: linear-gradient(45deg, #FBC173, #F36468);
+            border: none;
+            border-radius: 12px;
+            font-family: 'Aldrich';
+        }
+
+        #operator:hover {
+            background-image: linear-gradient(180deg, #FBC173, #F36468);
+
+        }
+    </style>
+    <script>
+        var screen = "";
+        document.getElementById("screen").innerHTML = screen;
+        function add(symbol) {
+            screen += symbol;
+            document.getElementById("screen").innerHTML = screen;
+        }
+        function remove() {
+            screen = screen.slice(0, -1);
+            document.getElementById("screen").innerHTML = screen;
+        }
+        function removeAll() {
+            screen = "";
+            document.getElementById("screen").innerHTML = screen;
+        }
+        function calculate() {
+            screen = eval(screen) + "";
+            document.getElementById("screen").innerHTML = screen;
+        }
+    </script>
+</head>
+
+<body>
+    <span class="calculator">
+        <span class="screen" id="screen">
+            0
+        </span>
+        <span class="buttons">
+            <button type="button" id="(" onclick="add('(')">(</button>
+            <button type="button" id=")" onclick="add(')');">)</button>
+            <button type="button" id="CE" onclick="removeAll();">CE</button>
+            <button type="button" id="C" onclick="remove();">⌫</button><br>
+            <button type="button" id="7" onclick="add(7);">7</button>
+            <button type="button" id="8" onclick="add(8);">8</button>
+            <button type="button" id="9" onclick="add(9);">9</button>
+            <button type="button" id="operator" onclick="add('+');">+</button><br>
+            <button type="button" id="4" onclick="add(4);">4</button>
+            <button type="button" id="5" onclick="add(5);">5</button>
+            <button type="button" id="6" onclick="add(6);">6</button>
+            <button type="button" id="operator" onclick="add('-');">-</button><br>
+            <button type="button" id="1" onclick="add(1);">1</button>
+            <button type="button" id="2" onclick="add(2);">2</button>
+            <button type="button" id="3" onclick="add(3);">3</button>
+            <button type="button" id="operator" onclick="add('*');">*</button><br>
+            <button type="button" id="." onclick="add('.');">.</button>
+            <button type="button" id="0" onclick="add(0);">0</button>
+            <button type="button" id="operator" onclick="calculate();">=</button>
+            <button type="button" id="operator" onclick="add('/');">÷</button><br>
+        </span>
+    </span>
+</body>
+
+</html>
