@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -17,216 +17,202 @@
     />
 
     <title>Hello, world!</title>
-	 <style> 
-		 
-		 @import url('https://fonts.googleapis.com/css?family=Poppins:900&display=swap');
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Poppins:900&display=swap');
 
-.col-sm { 
-   background-color: black;
-   margin: 5rem 4rem;
-   text-align: center;
-   font-family: 'Poppins', 'sans-serif';
-}
-h5, h6 {   
-   margin: 0;
-   padding: 0;
-   color: white;
-   display: inline-block;
-   font-size: 4rem;
-   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-}
-		 h6{
-			font-size: 2rem; 
-		 }
+      .col-sm {
+        background-color: black;
+        margin: 5rem 4rem;
+        text-align: center;
+        font-family: 'Poppins', 'sans-serif';
+      }
+      h5,
+      h6 {
+        margin: 0;
+        padding: 0;
+        color: white;
+        display: inline-block;
+        font-size: 4rem;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+          0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+      }
+      h6 {
+        font-size: 2rem;
+      }
 
-// @for $j from 0 through 6 {
-//    h5:nth-child(n + #{$j}), h6:nth-child(n + #{$j}) {
-//       transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-//       transform: translate(-5px,-5px) scale(1);
-//       transform-origin: right center;
-//       &:hover {
-//          transform: translate(0px,0px) scale(0);
-//          transform-origin: center right;
-//       }
-//    }
-// }
-@for $j from 0 through 5 {
-   h5:nth-child(0n + #{$j}), h6:nth-child(5n + #{$j}) {
-     animation-name: animateGlithcy;
-     animation-delay: #{$j/5}s;
-     animation-duration: #{$j/2}s;
-     animation-timing-function: linear;
-     animation-direction: alternate-reverse;
-     animation-iteration-count: infinite;
-   }
-}
-@keyframes animateGlithcy
-{
-	0%
-	{
-		opacity: .1;
-		background-position: 0 0;
-		filter: hue-rotate(0deg);
-	}
-	10%
-	{
-		background-position: 5px 0;
-	}
-	20%
-	{
-		background-position: -5px 0;
-	}
-	30%
-	{
-		background-position: 15px 0;
-	}
-	40%
-	{
-		background-position: -5px 0;
-	}
-	50%
-	{
-		background-position: -25px 0;
-	}
-	60%
-	{
-		background-position: -50px 0;
-	}
-	70%
-	{
-		background-position: 0 -20px;
-	}
-	80%
-	{
-		background-position: -60px -20px;
-	}
-	81%
-	{
-		background-position: 0 0;
-	}
-	100%
-	{
-		opacity: 1;
-		background-position: 0 0;
-		filter: hue-rotate(360deg);
-	}
-}
-		 
-		 
-		 .nav{
-		 background-color:#9DD9F3;
-		 }
-		 .nav-link{
-			 
-  background-color:#9DD9F3;
-			 color:black;
-  
-}
-		a.nav-link:hover {
-  background-color:#1B01FD;
-			color:white;
-			transition: background-color .5s;
-}
-		 .col-sm{
-			border: 2px dotted black;
-			
-			
-		 } 
-		 
-		 footer {
-   position:absolute;
-   bottom:0;
-   width:100%;
-   height:60px;   /* Height of the footer */
-   background:#A4FBF4
-}
-		 form{
-			 background:#DFDEDE;
-		border: 2px solid black;
-		 }
-	  </style>
-	
-	  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    "
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+      // @for $j from 0 through 6 {
+      //    h5:nth-child(n + #{$j}), h6:nth-child(n + #{$j}) {
+      //       transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      //       transform: translate(-5px,-5px) scale(1);
+      //       transform-origin: right center;
+      //       &:hover {
+      //          transform: translate(0px,0px) scale(0);
+      //          transform-origin: center right;
+      //       }
+      //    }
+      // }
+      @for $j from 0 through 5 {
+        h5:nth-child(0n + #{$j}),
+        h6:nth-child(5n + #{$j}) {
+          animation-name: animateGlithcy;
+          animation-delay: #{$j/5}s;
+          animation-duration: #{$j/2}s;
+          animation-timing-function: linear;
+          animation-direction: alternate-reverse;
+          animation-iteration-count: infinite;
+        }
+      }
+      @keyframes animateGlithcy {
+        0% {
+          opacity: 0.1;
+          background-position: 0 0;
+          filter: hue-rotate(0deg);
+        }
+        10% {
+          background-position: 5px 0;
+        }
+        20% {
+          background-position: -5px 0;
+        }
+        30% {
+          background-position: 15px 0;
+        }
+        40% {
+          background-position: -5px 0;
+        }
+        50% {
+          background-position: -25px 0;
+        }
+        60% {
+          background-position: -50px 0;
+        }
+        70% {
+          background-position: 0 -20px;
+        }
+        80% {
+          background-position: -60px -20px;
+        }
+        81% {
+          background-position: 0 0;
+        }
+        100% {
+          opacity: 1;
+          background-position: 0 0;
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      .nav {
+        background-color: #9dd9f3;
+      }
+      .nav-link {
+        background-color: #9dd9f3;
+        color: black;
+      }
+      a.nav-link:hover {
+        background-color: #1b01fd;
+        color: white;
+        transition: background-color 0.5s;
+      }
+      .col-sm {
+        border: 2px dotted black;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px; /* Height of the footer */
+        background: #a4fbf4;
+      }
+      form {
+        background: #dfdede;
+        border: 2px solid black;
+      }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    "
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <script>
-    console.log("at geturl")
-    async function getUrl(ajaxurl, onSuccess, onFail) {
-	let result;
+      console.log('at geturl');
+      async function getUrl(ajaxurl, onSuccess, onFail) {
+        let result;
 
-	try {
-		result = await $.ajax({
-			url: ajaxurl,
-			type: "GET"
-		});
-		onSuccess(result); //jquerySelector.html(JSON.stringify(result,null,2))
-		return result;
-	} catch (error) {
-		if (onFail) onFail(error);
-		console.error(error);
-	}
-}
+        try {
+          result = await $.ajax({
+            url: ajaxurl,
+            type: 'GET',
+          });
+          onSuccess(result); //jquerySelector.html(JSON.stringify(result,null,2))
+          return result;
+        } catch (error) {
+          if (onFail) onFail(error);
+          console.error(error);
+        }
+      }
 
-//Not used but left for reference
-function makeplotCSV() {
-	Plotly.d3.csv(
-		"https://raw.githubusercontent.com/plotly/datasets/master/2014_apple_stock.csv",
-		function (data) {
-			processData(data);
-		}
-	);
-}
+      //Not used but left for reference
+      function makeplotCSV() {
+        Plotly.d3.csv(
+          'https://raw.githubusercontent.com/plotly/datasets/master/2014_apple_stock.csv',
+          function (data) {
+            processData(data);
+          }
+        );
+      }
 
-function makePlotly(x, y) {
-    let divID = "plot";
-	var traces = [
-		{
-			x: x,
-			y: y
-		}
-	];
-    let settings = {
-		title: "Plotting Covid data from AJAX call"
-	}
-    console.log('writing to screen')
+      function makePlotly(x, y) {
+        let divID = 'plot';
+        var traces = [
+          {
+            x: x,
+            y: y,
+          },
+        ];
+        let settings = {
+          title: 'Plotting Covid data from AJAX call',
+        };
+        console.log('writing to screen');
 
-	Plotly.newPlot(divID, traces, settings);
-}
-		
-		function makePlotly1(x, y) {
-    let divID = "plot1";
-	var traces = [
-		{
-			x: x,
-			y: y
-		}
-	];
-    let settings = {
-		title: "Plotting Covid data from AJAX call"
-	}
-    console.log('writing to screen')
+        Plotly.newPlot(divID, traces, settings);
+      }
 
-	Plotly.newPlot(divID, traces, settings);
-}
-		
-		function makePlotly2(x, y) {
-    let divID = "plot2";
-	var traces = [
-		{
-			x: x,
-			y: y
-		}
-	];
-    let settings = {
-		title: "Plotting Covid data from AJAX call"
-	}
-    console.log('writing to screen')
+      function makePlotly1(x, y) {
+        let divID = 'plot1';
+        var traces = [
+          {
+            x: x,
+            y: y,
+          },
+        ];
+        let settings = {
+          title: 'Plotting Covid data from AJAX call',
+        };
+        console.log('writing to screen');
 
-	Plotly.newPlot(divID, traces, settings);
-}
-		
-/*
+        Plotly.newPlot(divID, traces, settings);
+      }
+
+      function makePlotly2(x, y) {
+        let divID = 'plot2';
+        var traces = [
+          {
+            x: x,
+            y: y,
+          },
+        ];
+        let settings = {
+          title: 'Plotting Covid data from AJAX call',
+        };
+        console.log('writing to screen');
+
+        Plotly.newPlot(divID, traces, settings);
+      }
+
+      /*
  {
     "date": 20210307,
     "states": 56,
@@ -255,284 +241,344 @@ function makePlotly(x, y) {
     "hash": "5468834088e2fb08a860dda6178a1faabe61edce"
   },
   */
-function plotResult(data) {
-	//data has a date field
+      function plotResult(data) {
+        //data has a date field
 
-	let x = [];
-	let y = [];
-    console.log(`Plotting ${data.length} elements`)
-	for (let i = 0; i < data.length; i++) {
-		let row = data[i];
-		x.push(moment(row.date.toString()).toDate());
-		y.push(row.hospitalizedCurrently);
-	}
+        let x = [];
+        let y = [];
+        console.log(`Plotting ${data.length} elements`);
+        for (let i = 0; i < data.length; i++) {
+          let row = data[i];
+          x.push(moment(row.date.toString()).toDate());
+          y.push(row.hospitalizedCurrently);
+        }
 
-	makePlotly(x, y);
-	
-	
-	let x = [];
-	let y = [];
-    console.log(`Plotting ${data.length} elements`)
-	for (let i = 0; i < data.length; i++) {
-		let row = data[i];
-		x.push(moment(row.date.toString()).toDate());
-		y.push(row.hospitalizedIncrease);
-	}
+        makePlotly(x, y);
 
-	makePlotly1(x, y);
-	
-	
-	let x = [];
-	let y = [];
-    console.log(`Plotting ${data.length} elements`)
-	for (let i = 0; i < data.length; i++) {
-		let row = data[i];
-		x.push(moment(row.date.toString()).toDate());
-		y.push(row.death);
-	}
+        let x1 = [];
+        let y1 = [];
+        console.log(`Plotting ${data.length} elements`);
+        for (let i = 0; i < data.length; i++) {
+          let row = data[i];
+          x1.push(moment(row.date.toString()).toDate());
+          y1.push(row.hospitalizedIncrease);
+        }
 
-	makePlotly2(x, y);
-	
-}
+        makePlotly1(x1, y1);
 
-let dailyCovidDataURL = "https://api.covidtracking.com/v1/us/daily.json";
+        let x2 = [];
+        let y2 = [];
+        console.log(`Plotting ${data.length} elements`);
+        for (let i = 0; i < data.length; i++) {
+          let row = data[i];
+          x2.push(moment(row.date.toString()).toDate());
+          y2.push(row.death);
+        }
 
-getUrl(
-	dailyCovidDataURL,
-	(res) => {
-        console.log('retrieved data')
-		plotResult(res);
-	},
-	(err) => {
-		console.error(err);
-	}
-);
+        makePlotly2(x2, y2);
+      }
 
+      let dailyCovidDataURL = 'https://api.covidtracking.com/v1/us/daily.json';
+
+      getUrl(
+        dailyCovidDataURL,
+        (res) => {
+          console.log('retrieved data');
+          plotResult(res);
+        },
+        (err) => {
+          console.error(err);
+        }
+      );
     </script>
-	
   </head>
   <body>
-  <h1>Dave's ITS562 Covid-19 Bootstrap Data Site</h1>
-  <header>
+    <h1>Dave's ITS562 Covid-19 Bootstrap Data Site</h1>
+    <header>
       <ul class="nav nav-pills">
         <li class="nav-item">
           <a class="nav-link active" id="nav1" href="boostrap.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="nav2" href="https://github.com/Rainman21/NodeJSexpressAPI/commit/fbdee74f45089ce3fc681963673cfb9fd1b4edfa">Course Covid Template</a>
+          <a
+            class="nav-link"
+            id="nav2"
+            href="https://github.com/Rainman21/NodeJSexpressAPI/commit/fbdee74f45089ce3fc681963673cfb9fd1b4edfa"
+            >Course Covid Template</a
+          >
         </li>
-		   <li class="nav-item" id="nav3">
-          <a class="nav-link" href="https://github.com/Rainman21/ITS562Spring2020/blob/master/SampleBootstrap/basicBootstrap.html">Course Bootstrap Template</a>
+        <li class="nav-item" id="nav3">
+          <a
+            class="nav-link"
+            href="https://github.com/Rainman21/ITS562Spring2020/blob/master/SampleBootstrap/basicBootstrap.html"
+            >Course Bootstrap Template</a
+          >
         </li>
-		  
+
         <li class="nav-item">
-          <a class="nav-link" id="nav4" href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">CDC Covid Site</a>
+          <a
+            class="nav-link"
+            id="nav4"
+            href="https://www.cdc.gov/coronavirus/2019-ncov/index.html"
+            >CDC Covid Site</a
+          >
         </li>
         <li class="nav-item" id="nav5">
-          <a class="nav-link" href="https://www.mass.gov/info-details/covid-19-updates-and-information">Massachusetts Covid Site</a>
+          <a
+            class="nav-link"
+            href="https://www.mass.gov/info-details/covid-19-updates-and-information"
+            >Massachusetts Covid Site</a
+          >
         </li>
-		 
       </ul>
     </header>
     <div class="container">
       <h1>Guidelines and Data</h1>
-<div class="row">
-    <div class="col-sm">
-         <div class="hello-world">
-   <h5>W</h5>
-   <h5>E</h5>
-  <h5>A</h5>
-   <h5>R</h5>
-   
-   <br/>
-  <h5>A</h5>
-	<br/>
-   <h5>M</h5>
-   <h5>A</h5>
-   <h5>S</h5>
-   <h5>K</h5>
-  </div>
- 
+      <div class="row">
+        <div class="col-sm">
+          <div class="hello-world">
+            <h5>W</h5>
+            <h5>E</h5>
+            <h5>A</h5>
+            <h5>R</h5>
+
+            <br />
+            <h5>A</h5>
+            <br />
+            <h5>M</h5>
+            <h5>A</h5>
+            <h5>S</h5>
+            <h5>K</h5>
+          </div>
         </div>
         <div class="col-sm">
-              <div class="hello-world">
-   <h5>S</h5>
-   <h5>O</h5>
-  <h5>C</h5>
-   <h5>I</h5>
-     <h5>A</h5>
-	  <h5>L</h5>
-		<h5>L</h5>
-		<h5>Y</h5>
-   <br/>
-     <h5>D</h5>
-   <h5>I</h5>
-   <h5>S</h5>
-   <h5>T</h5>
-	<h5>A</h5>
-	<h5>N</h5>
-	<h5>C</h5>
-<h5>E</h5>
-  </div>
-    </div>
-        <div class="col-sm">
-              <div class="hello-world">
-   <h5>W</h5>
-   <h5>A</h5>
-  <h5>S</h5>
-   <h5>H</h5>
-       <br/>
-     <h5>Y</h5>
-   <h5>O</h5>
-   <h5>U</h5>
-   <h5>R</h5>
-	 <br/>
-     <h5>H</h5>
-   <h5>A</h5>
-   <h5>N</h5>
-   <h5>D</h5>
-<h5>S</h5>
-  </div>
+          <div class="hello-world">
+            <h5>S</h5>
+            <h5>O</h5>
+            <h5>C</h5>
+            <h5>I</h5>
+            <h5>A</h5>
+            <h5>L</h5>
+            <h5>L</h5>
+            <h5>Y</h5>
+            <br />
+            <h5>D</h5>
+            <h5>I</h5>
+            <h5>S</h5>
+            <h5>T</h5>
+            <h5>A</h5>
+            <h5>N</h5>
+            <h5>C</h5>
+            <h5>E</h5>
+          </div>
         </div>
-	  
+        <div class="col-sm">
+          <div class="hello-world">
+            <h5>W</h5>
+            <h5>A</h5>
+            <h5>S</h5>
+            <h5>H</h5>
+            <br />
+            <h5>Y</h5>
+            <h5>O</h5>
+            <h5>U</h5>
+            <h5>R</h5>
+            <br />
+            <h5>H</h5>
+            <h5>A</h5>
+            <h5>N</h5>
+            <h5>D</h5>
+            <h5>S</h5>
+          </div>
+        </div>
       </div>
-		Code: edited from <a href="https://codepen.io/dyarfi/pen/VwLEjBd">https://codepen.io/dyarfi/pen/VwLEjBd</a>
-		 <div class="row">
-		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-       <span>Hospitalized Currently</span>
-        <div id='plot'>test</div>
-    </div>
-    <div class="carousel-item">
-      <span>Hospitalized Increased</span>
-        <div id='plot1'></div>
-    </div>
-    <div class="carousel-item">
-      <span>Death</span>
-        <div id='plot2'></div>
-    </div>
-  </div>
-</div>
-		</div>
-		
-		Are you interested in staying up to date on the latest Covid-19 developments? Subscribe below.
-		<form class="row g-3">
-  <div class="col-md-4">
-    <label for="validationDefault01" class="form-label">First name</label>
-    <input type="text" class="form-control" id="validationDefault01" value="" required>
-  </div>
-  <div class="col-md-4">
-    <label for="validationDefault02" class="form-label">Last name</label>
-    <input type="text" class="form-control" id="validationDefault02" value="" required>
-  </div>
-  <div class="col-md-4">
-    <label for="validationDefaultUsername" class="form-label">Email</label>
-    <div class="input-group">
-      <span class="input-group-text" id="inputGroupPrepend2">@</span>
-      <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <label for="validationDefault03" class="form-label">City</label>
-    <input type="text" class="form-control" id="validationDefault03" required>
-  </div>
-  <div class="col-md-3">
-    <label for="validationDefault04" class="form-label">State</label>
-    <select class="form-select" id="validationDefault04" required>
-      <option selected disabled value="">Choose...</option>
- <option value="AL">Alabama</option>
-	<option value="AK">Alaska</option>
-	<option value="AZ">Arizona</option>
-	<option value="AR">Arkansas</option>
-	<option value="CA">California</option>
-	<option value="CO">Colorado</option>
-	<option value="CT">Connecticut</option>
-	<option value="DE">Delaware</option>
-	<option value="DC">District Of Columbia</option>
-	<option value="FL">Florida</option>
-	<option value="GA">Georgia</option>
-	<option value="HI">Hawaii</option>
-	<option value="ID">Idaho</option>
-	<option value="IL">Illinois</option>
-	<option value="IN">Indiana</option>
-	<option value="IA">Iowa</option>
-	<option value="KS">Kansas</option>
-	<option value="KY">Kentucky</option>
-	<option value="LA">Louisiana</option>
-	<option value="ME">Maine</option>
-	<option value="MD">Maryland</option>
-	<option value="MA" selected>Massachusetts</option>
-	<option value="MI">Michigan</option>
-	<option value="MN">Minnesota</option>
-	<option value="MS">Mississippi</option>
-	<option value="MO">Missouri</option>
-	<option value="MT">Montana</option>
-	<option value="NE">Nebraska</option>
-	<option value="NV">Nevada</option>
-	<option value="NH">New Hampshire</option>
-	<option value="NJ">New Jersey</option>
-	<option value="NM">New Mexico</option>
-	<option value="NY">New York</option>
-	<option value="NC">North Carolina</option>
-	<option value="ND">North Dakota</option>
-	<option value="OH">Ohio</option>
-	<option value="OK">Oklahoma</option>
-	<option value="OR">Oregon</option>
-	<option value="PA">Pennsylvania</option>
-	<option value="RI">Rhode Island</option>
-	<option value="SC">South Carolina</option>
-	<option value="SD">South Dakota</option>
-	<option value="TN">Tennessee</option>
-	<option value="TX">Texas</option>
-	<option value="UT">Utah</option>
-	<option value="VT">Vermont</option>
-	<option value="VA">Virginia</option>
-	<option value="WA">Washington</option>
-	<option value="WV">West Virginia</option>
-	<option value="WI">Wisconsin</option>
-	<option value="WY">Wyoming</option>
-    </select>
-  </div>
-  <div class="col-md-3">
-    <label for="validationDefault05" class="form-label">Zip</label>
-    <input type="text" class="form-control" id="validationDefault05" required>
-  </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-      <label class="form-check-label" for="invalidCheck2">
-        Agree to terms and conditions
-      </label>
-    </div>
-  </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Submit form</button>
-  </div>
-</form>
-		
-		
+      Code: edited from
+      <a href="https://codepen.io/dyarfi/pen/VwLEjBd"
+        >https://codepen.io/dyarfi/pen/VwLEjBd</a
+      >
+      <div class="row">
+        <div
+          id="carouselExampleSlidesOnly"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <span>Hospitalized Currently</span>
+              <div id="plot">test</div>
+            </div>
+            <div class="carousel-item">
+              <span>Hospitalized Increased</span>
+              <div id="plot1"></div>
+            </div>
+            <div class="carousel-item">
+              <span>Death</span>
+              <div id="plot2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      Are you interested in staying up to date on the latest Covid-19
+      developments? Subscribe below.
+      <form class="row g-3">
+        <div class="col-md-4">
+          <label for="validationDefault01" class="form-label">First name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationDefault01"
+            value=""
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="validationDefault02" class="form-label">Last name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationDefault02"
+            value=""
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="validationDefaultUsername" class="form-label"
+            >Email</label
+          >
+          <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+            <input
+              type="text"
+              class="form-control"
+              id="validationDefaultUsername"
+              aria-describedby="inputGroupPrepend2"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationDefault03" class="form-label">City</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationDefault03"
+            required
+          />
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault04" class="form-label">State</label>
+          <select class="form-select" id="validationDefault04" required>
+            <option selected disabled value="">Choose...</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA" selected>Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault05" class="form-label">Zip</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationDefault05"
+            required
+          />
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="invalidCheck2"
+              required
+            />
+            <label class="form-check-label" for="invalidCheck2">
+              Agree to terms and conditions
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
     </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script
+    <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"
     ></script>
-  <script
+    <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
       crossorigin="anonymous"
     ></script>
-  <script
+    <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-  <footer>State list borrowed from: <a href="https://www.freeformatter.com/usa-state-list-html-select.html">href="https://www.freeformatter.com/usa-state-list-html-select.html</a>
-	  <br/>
-	  Form validation borrowed from: <a href="https://getbootstrap.com/docs/5.0/forms/validation/">https://getbootstrap.com/docs/5.0/forms/validation/</a></footer>
-</body>
+    <footer>
+      State list borrowed from:
+      <a href="https://www.freeformatter.com/usa-state-list-html-select.html"
+        >href="https://www.freeformatter.com/usa-state-list-html-select.html</a
+      >
+      <br />
+      Form validation borrowed from:
+      <a href="https://getbootstrap.com/docs/5.0/forms/validation/"
+        >https://getbootstrap.com/docs/5.0/forms/validation/</a
+      >
+    </footer>
+  </body>
 </html>
