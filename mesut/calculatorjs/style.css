@@ -1,0 +1,198 @@
+header{
+height: 40px;
+    font-size: 30px;
+color: black;
+font-family: Arial, Helvetica, sans-serif;
+}
+#calculator{
+    background-color: black;
+    width: 335px;
+    height: 680px;
+    border-radius: 20px;
+}
+body{
+   
+    background-color:darkgrey;
+}
+
+#mainText{
+    width: 320px;
+    height: 300px;
+    background-color: black;
+    color: rgb(135, 135, 228);
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    text-align: bottom;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-width: 0px;
+}
+button:hover{
+    opacity: 30%;
+}
+button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+}
+
+#number0{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+#number1{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+
+}
+#number2{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+#number3{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+#number4{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+#number5{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+#number6{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+#number7{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+#number8{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+#number9{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+#clear{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color:white;
+    color:black;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+#plus{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color:orange;
+    color: white;
+    font-size: 50px;
+}
+#minus{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color:orange;
+    color: white;
+    font-size: 50px;
+}
+#numberDecimal{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color:darkgray;
+    color:black;
+    font-size: xx-large;
+    font-size: 50px;
+}
+#numberMinus{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color:orange;
+    color: white;
+    font-size: 50px;
+}
+#equals{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color:orange;
+    color: white;
+    font-size: 50px;
+}
+footer{
+    font-size: 20px;
+    color: darkblue;
+    font-family: 'Times New Roman', Times, serif;
+}

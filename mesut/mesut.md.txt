@@ -1,0 +1,4 @@
+#Covid tracking sites
+https://covidtracking.com/data/state/massachusetts
+https://covid.cdc.gov/covid-data-tracker/#datatracker-home
+https://www.nytimes.com/interactive/2020/us/covid-cases-deaths-tracker.html
