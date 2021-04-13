@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kursad's Plotly Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.58.4/plotly.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"></script>
+
+
+    <ul class="nav nav-pills">
+        <li class="nav-item ">
+            <a class="nav-link " href="../index.html">Home</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link active" href="Kursad.html">Kursad</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="David.html">David</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Ozen.html">Ozen</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Mesut.html">Mesut</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Kaan.html">Kaan</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Matt.html">Matt</a>
+        </li>
+    </ul>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <span data-feather="home"></span>
+                                Total Death <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file"></span>
+                                Total Case
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="shopping-cart"></span>
+                                Daily Death
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Daily Case
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="bar-chart-2"></span>
+                                P to N Ratio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="layers"></span>
+                                Hospitalized to Ventilated Ratio
+                            </a>
+                        </li>
+                    </ul>
+
+                    
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+
+                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <span data-feather="calendar"></span>
+                            This week
+                        </button>
+                        <span> To </span>
+                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <span data-feather="calendar"></span>
+                            This week
+                        </button>
+                    </div>
+                </div>
+
+
+
+                <div id="plot"></div>
+
+            </main>
+        </div>
+    </div>
+
+
+
+</body>
+<script>
+    $("#plott").html("This is <strong>the text</strong> for the plot id")
+    let url = "https://api.covidtracking.com/v1/us/daily.json"
+    async function getUrl(ajaxurl, onSuccess, onFail) {
+        let result;
+        try {
+            result = await $.ajax({
+                url: ajaxurl,
+                type: "GET"
+            });
+            onSuccess(result); //jquerySelector.html(JSON.stringify(result,null,2))
+            return result;
+        } catch (error) {
+            if (onFail) onFail(error);
+            console.error(error);
+        }
+    }
+    getUrl(url,
+        displayCovidData,
+        (err) => console.error(err)
+    )
+    function displayCovidData(covidData) {
+        $("#rawdata").html(JSON.stringify(covidData, null, 2));
+        let x = [];
+        let y = [];
+        for (i = 0; i < covidData.length; i++) {
+            
+            x.push(moment(covidData[i].date.toString()).toDate());
+            y.push(covidData[i].hospitalizedCurrently);
+            console.log(x)
+        }
+        makePlotly(x, y);
+    }
+    function makePlotly(xArray, yArray) {
+        let divID = "plot";
+        var traces = [
+            {
+                x: xArray,
+                y: yArray,
+                type: 'bar'
+            }
+        ];
+        Plotly.newPlot(divID, traces);
+    }
+</script>
+
+</html>
