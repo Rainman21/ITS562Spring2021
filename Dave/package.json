@@ -1,0 +1,17 @@
+{
+  "name": "dave",
+  "version": "1.0.0",
+  "description": "Some helpful Git commands:\r 1. git init  - initialize an existing directory as a Git repository\r 2. git clone [url] - retrieve an entire repository from a hosted location via URL\r 3. git merge [branch] - merge the specified branch’s history into the current one\r 4. git merge [alias]/[branch] - merge a remote branch into your current branch to bring it up to date\r 5. git push [alias] [branch] - Transmit local branch commits to the remote repository branch\r 6. git pull - fetch and merge any commits from the tracking remote branch\r 7. git add [file]  -add a file as it looks now to your next commit (stage)\r 8. git diff - diff of what is changed but not staged\r 9. git commit -m “[descriptive message]” - commit your staged content as a new commit snapshot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "moment": "^2.29.1",
+    "plotly.js": "^1.58.4"
+  }
+}
