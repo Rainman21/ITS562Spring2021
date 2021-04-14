@@ -1,0 +1,37 @@
+.nav-pills .nav-link{
+    border-radius: 40px;;
+    background-color:darkblue;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+.container{
+    background-color:darkblue;
+    margin-left: 0px;
+    width: fit-content;
+    height: 200px;  
+}
+
+.nav-pills .nav-link.active,.nav-pills .show>.nav-link {
+    color:red;
+    background-color:darkblue;
+    padding-left:auto;
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+
+.nav-fill .nav-item {
+    -ms-flex:1 1 auto;flex:1 1 auto;text-align:left
+}
+
+.buthover {
+    background-color:rgb(10, 3, 3);
+    color:red;
+  } 
+  
+  .nav-item:hover{
+      opacity: 150%;
+      transform: translate(red);
+  }
