@@ -1,0 +1,10 @@
+// JSON Document
+{
+    "firstName": "Dave",
+    "lastName": "jackson",
+    "HTML5": "75%",
+	"CSS3": "50%",
+	"jQuery": "25%",
+   "GitHub": "95%",
+	"TypeScript": "90%",
+}

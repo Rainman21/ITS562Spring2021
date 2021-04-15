@@ -140,7 +140,7 @@ document.body.style.backgroundColor=$("#cPicker").val();
     <div class="container"> Choose the page background color:
 <input id="cPicker" type="color" onChange="doColor()">
       <h1>Covid Data Over Time:</h1>
-      <div class="row" id="holder">
+      <div class="row">
       <select id="chartParam" name="chartParam">
   <option value="hospitalizedCurrently">hospitalizedCurrently</option>
   <option value="inIcuCurrently">inIcuCurrently</option>
@@ -211,7 +211,6 @@ document.body.style.backgroundColor=$("#cPicker").val();
       }
 
       function makePlotly(x, y) {
-		    //Plotly.deleteTraces("plotlyData", 0);
         let divID = 'plotlyData';
         var traces = [
           {
@@ -225,7 +224,6 @@ document.body.style.backgroundColor=$("#cPicker").val();
         console.log('writing to screen');
 document.getElementById("plotlyData").innerHTML="";
 		  document.getElementById("plotlyData").style.height = "400px";
-		
         Plotly.newPlot(divID, traces, settings);
       }
 
@@ -262,21 +260,21 @@ document.getElementById("plotlyData").innerHTML="";
       function plotResult(data) {
         //data has a date field
 let z=$("#chartParam").val();
-		  //alert($("#chartParam").val());
+		  alert($("#chartParam").val());
         let x = [];
         let y = [];
         console.log(`Plotting ${data.length} elements`);
         for (let i = 0; i < data.length; i++) {
           let row = data[i];
           x.push(moment(row.date.toString()).toDate());
-         y.push(row[z]);
+         // y.push(row.z.toString());
 		//	y.push(data[i].z.toString());
-			
+			let w=row+ "."+ z;
+		y.push(w);	
 			//alert(w);
         }
 $("#search").click(function() {
-	document.getElementById("holder").innerHTML=$("#chartParam").val();;
- 	//alert($("#chartParam").val());
+ 	alert($("#chartParam").val());
 	makePlotly(x, y);
 	
 });
