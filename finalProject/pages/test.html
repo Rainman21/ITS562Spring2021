@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kursad's Plotly Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.58.4/plotly.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Kursad's Plotly</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link " href="../index.html">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link active" href="Kursad.html">Kursad</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="David.html">David</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Ozen.html">Ozen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Mesut.html">Mesut</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Kaan.html">Kaan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Matt.html">Matt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+</head>
+
+<body style="background-color: #1E1E2F; color: white;">
+
+
+
+    <div class="container-fluid p-5">
+        <div class="row">
+            <div class="col-sm-3 rounded-lg" style="background-image: linear-gradient(180deg, #E14ECA, #B853F0);">
+                <div class="text-center">
+                    <i class="tim-icons icon-chart-pie-36"></i>
+                    <p>Covid Charts</p>
+                    <hr />
+                </div>
+                <div>
+                    <i class="tim-icons icon-chart-pie-36"></i>
+                    <p>Total Death</p>
+                    <hr />
+                </div>
+                <div>
+                    <i class="tim-icons icon-atom"></i>
+                    <p>Total Case</p>
+                    <hr />
+                </div>
+                <div>
+                    <i class="tim-icons icon-pin"></i>
+                    <p>Daily Death</p>
+                    <hr />
+                </div>
+                <div>
+                    <i class="tim-icons icon-bell-55"></i>
+                    <p>Daily Case</p>
+                    <hr />
+                </div>
+                <div>
+                    <i class="tim-icons icon-single-02"></i>
+                    <p>Positive / Negative</p>
+                    <hr />
+                </div>
+                <div>
+                    <i class="tim-icons icon-puzzle-10"></i>
+                    <p>Hospitalized / Ventilated</p>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-12 rounded-lg" style="background-color:#27293D;">
+                        <div id="totalDeath"></div>
+                    </div>
+                    <div class="col-sm-12 rounded-lg" style="background-color:#27293D;">
+                        <div id="totalCases"></div>
+                    </div>
+                    <div class="col-sm-12 rounded-lg" style="background-color:#27293D;">
+                        <div id="dailyDeath"></div>
+                    </div>
+                    <div class="col-sm-12 rounded-lg" style="background-color:#27293D;">
+                        <div id="dailyCases"></div>
+                    </div>
+                    <div class="col-sm-3 rounded-lg" style="background-color:#27293D;">50%</div>
+                    <div class="col-sm-9 rounded-lg" style="background-color:#27293D;">50%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    $("#plott").html("This is <strong>the text</strong> for the plot id")
+    let url = "https://api.covidtracking.com/v1/us/daily.json"
+    async function getUrl(ajaxurl, onSuccess, onFail) {
+        let result;
+        try {
+            result = await $.ajax({
+                url: ajaxurl,
+                type: "GET"
+            });
+            onSuccess(result); //jquerySelector.html(JSON.stringify(result,null,2))
+            return result;
+        } catch (error) {
+            if (onFail) onFail(error);
+            console.error(error);
+        }
+    }
+    getUrl(url,
+        displayCovidData,
+        (err) => console.error(err)
+    )
+    function displayCovidData(covidData) {
+        $("#rawdata").html(JSON.stringify(covidData, null, 2));
+        let date = [];
+        let death = [];
+        let cases = [];
+        let dailyDeath = [];
+        let dailyCases = [];
+        for (i = 0; i < covidData.length; i++) {
+
+            date.push(moment(covidData[i].date.toString()).toDate());
+            death.push(covidData[i].death);
+            cases.push(covidData[i].positive);
+            dailyDeath.push(covidData[i].deathIncrease);
+            dailyCases.push(covidData[i].positiveIncrease);
+            console.log(date)
+        }
+        makePlotly(date, death, cases, dailyDeath, dailyCases);
+    }
+    function makePlotly(date, death, cases, dailyDeath, dailyCases) {
+        let totalDeath = "totalDeath";
+        let totalCases = "totalCases";
+        let dDeath = "dailyDeath";
+        let dCases = "dailyCases";
+        var tracesDeath = [
+            {
+                x: date,
+                y: death,
+                type: 'scatter',
+                mode: 'lines',
+                marker: {
+                    color: '#E14ECA',
+                }
+            }
+        ];
+        var tracesCases = [
+            {
+                x: date,
+                y: cases,
+                type: 'scatter',
+                mode: 'lines',
+                marker: {
+                    color: '#E14ECA',
+                }
+            }
+        ];
+        var tracesDailyDeath = [
+            {
+                x: date,
+                y: dailyDeath,
+                type: 'bar',
+                marker: {
+                    color: '#E14ECA',
+                }
+            }
+        ];
+        var tracesDailyCases = [
+            {
+                x: date,
+                y: dailyCases,
+                type: 'bar',
+                marker: {
+                    color: '#E14ECA',
+                }
+            }
+        ];
+        var layoutDeath = {
+            title: "Total Death",
+            font: {
+                family: "Courier New, monospace",
+                size: 18,
+                color: "#E14ECA"
+            },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            xaxis: {
+                showgrid: false
+            },
+            yaxis: {
+                showgrid: false,
+                showline: true
+            }
+
+        };
+        var layoutCases = {
+            title: "Total Cases",
+            font: {
+                family: "Courier New, monospace",
+                size: 18,
+                color: "#E14ECA"
+            },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            xaxis: {
+                showgrid: false
+            },
+            yaxis: {
+                showgrid: false,
+                showline: true
+            }
+
+        };
+
+        var layoutDailyDeath = {
+            title: "Daily Death",
+            font: {
+                family: "Courier New, monospace",
+                size: 18,
+                color: "#E14ECA"
+            },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            xaxis: {
+                showgrid: false
+            },
+            yaxis: {
+                showgrid: false,
+                showline: true
+            }
+
+        };
+
+        var layoutDailyCases = {
+            title: "Daily Cases",
+            font: {
+                family: "Courier New, monospace",
+                size: 18,
+                color: "#E14ECA"
+            },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            xaxis: {
+                showgrid: false
+            },
+            yaxis: {
+                showgrid: false,
+                showline: true
+            }
+
+        };
+
+        var config = {responsive: true}
+
+        Plotly.newPlot(totalDeath, tracesDeath, layoutDeath, config);
+        Plotly.newPlot(totalCases, tracesCases, layoutCases, config);
+        Plotly.newPlot(dDeath, tracesDailyDeath, layoutDailyDeath, config);
+        Plotly.newPlot(dCases, tracesDailyCases, layoutDailyCases, config);
+    }
+</script>
+
+
+</html>
