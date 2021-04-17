@@ -5,163 +5,132 @@
     <title>Kursad's Plotly Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.58.4/plotly.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
         crossorigin="anonymous"></script>
 
+    <!-- Include Bootstrap Datepicker -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" />
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
 
-    <ul class="nav nav-pills">
-        <li class="nav-item ">
-            <a class="nav-link " href="../index.html">Home</a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link active" href="Kursad.html">Kursad</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="David.html">David</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="Ozen.html">Ozen</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="Mesut.html">Mesut</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="Kaan.html">Kaan</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="Matt.html">Matt</a>
-        </li>
-    </ul>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Kursad's Plotly Page</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link " href="../index.html">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link active" href="Kursad.html">Kursad</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="David.html">David</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Ozen.html">Ozen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Mesut.html">Mesut</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Kaan.html">Kaan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Matt.html">Matt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
 </head>
 
-<body>
-    <div class="container-fluid">
+<body style="background-color: #1E1E2F; color: white;">
+
+
+
+    <div class="container-fluid p-5">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <span data-feather="home"></span>
-                                Total Death <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file"></span>
-                                Total Case
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="shopping-cart"></span>
-                                Daily Death
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="users"></span>
-                                Daily Case
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="bar-chart-2"></span>
-                                P to N Ratio
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="layers"></span>
-                                Hospitalized to Ventilated Ratio
-                            </a>
-                        </li>
-                    </ul>
-
-                    
-                    </ul>
+            <div class="col-sm-3 rounded-lg" style="background-image: linear-gradient(180deg, #E14ECA, #B853F0);">
+                <div class="text-center">
+                    <p>Covid Charts</p>
+                    <hr />
                 </div>
-            </nav>
-
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard</h1>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-
-                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar"></span>
-                            This week
-                        </button>
-                        <span> To </span>
-                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar"></span>
-                            This week
-                        </button>
+                <div>
+                    <div class="btn" style="color:white" onclick="hide('totalDeath')">Total Death</div>
+                    <hr />
+                </div>
+                <div>
+                    <div class="btn" style="color:white" onclick="hide('totalCases')">Total Case</div>
+                    <hr />
+                </div>
+                <div>
+                    <div class="btn" style="color:white" onclick="hide('dailyDeath')">Daily Death</div>
+                    <hr />
+                </div>
+                <div>
+                    <div class="btn" style="color:white" onclick="hide('dailyCases')">Daily Case</div>
+                    <hr />
+                </div>
+                <div>
+                    <div class="btn" style="color:white" onclick="hide('hosInc')">Hospitalized - Intensive Care
+                    </div>
+                    <hr />
+                </div>
+                <div>
+                    <div class="btn" style="color:white" onclick="hide('incVen')">Intensive Care - On Ventilator
                     </div>
                 </div>
-
-
-
-                <div id="plot"></div>
-
-            </main>
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-3 rounded-left" style="background-color:#27293D;">
+                        <input type="date" id="dateFirst" value="2020-02-10" min="2020-02-10" max="2021-03-07">
+                    </div>
+                    <div class="col-sm-3 rounded-right" style="background-color:#27293D;">
+                        <input type="date" id="dateLast" value="2021-03-07" min="2020-02-10" max="2021-03-07">
+                    </div>
+                    <div class="col-sm-2 btn " style="background-color:#E14ECA;" onclick="setDate()">
+                        Submit
+                    </div>
+                    <div class="col-sm-12 rounded-lg" style="background-color:#27293D;">
+                        <div id="totalDeath"></div>
+                    </div>
+                    <div class="col-sm-12 rounded-lg" style="background-color:#27293D;">
+                        <div id="totalCases"></div>
+                    </div>
+                    <div class="col-sm-12 rounded-lg" style="background-color:#27293D;">
+                        <div id="dailyDeath"></div>
+                    </div>
+                    <div class="col-sm-12 rounded-lg" style="background-color:#27293D;">
+                        <div id="dailyCases"></div>
+                    </div>
+                    <div class="col-sm-12 rounded-lg" style="background-color:#27293D;">
+                        <div id="hosInc"></div>
+                    </div>
+                    <div class="col-sm-12 rounded-lg" style="background-color:#27293D;">
+                        <div id="incVen"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-
-
 </body>
-<script>
-    $("#plott").html("This is <strong>the text</strong> for the plot id")
-    let url = "https://api.covidtracking.com/v1/us/daily.json"
-    async function getUrl(ajaxurl, onSuccess, onFail) {
-        let result;
-        try {
-            result = await $.ajax({
-                url: ajaxurl,
-                type: "GET"
-            });
-            onSuccess(result); //jquerySelector.html(JSON.stringify(result,null,2))
-            return result;
-        } catch (error) {
-            if (onFail) onFail(error);
-            console.error(error);
-        }
-    }
-    getUrl(url,
-        displayCovidData,
-        (err) => console.error(err)
-    )
-    function displayCovidData(covidData) {
-        $("#rawdata").html(JSON.stringify(covidData, null, 2));
-        let x = [];
-        let y = [];
-        for (i = 0; i < covidData.length; i++) {
-            
-            x.push(moment(covidData[i].date.toString()).toDate());
-            y.push(covidData[i].hospitalizedCurrently);
-            console.log(x)
-        }
-        makePlotly(x, y);
-    }
-    function makePlotly(xArray, yArray) {
-        let divID = "plot";
-        var traces = [
-            {
-                x: xArray,
-                y: yArray,
-                type: 'bar'
-            }
-        ];
-        Plotly.newPlot(divID, traces);
-    }
-</script>
-
+<script src="../scripts/kursad.js"></script>
 </html>
